@@ -5,6 +5,18 @@
  */
 export function Pull (Link, Message) {
 // TODO: Pull-function
+  fetch(Link, {
+    method: 'PULL',
+    headers: { 'content-type': 'application/json' },
+    body: Message
+  })
+    .then(response => {
+      console.log(response)
+      // TODO: Response
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 /**
@@ -14,6 +26,18 @@ export function Pull (Link, Message) {
  */
 export function Push (Link, Message) {
 // TODO: Push-function
+  fetch(Link, {
+    method: 'PUSH',
+    headers: { 'content-type': 'application/json' },
+    body: Message
+  })
+    .then(response => {
+      console.log(response)
+      // TODO: Response
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 /**
@@ -22,7 +46,18 @@ export function Push (Link, Message) {
  * @param {String} Message
  */
 export function Put (Link, Message) {
-// TODO: Put-function
+  fetch(Link, {
+    method: 'PUT',
+    headers: { 'content-type': 'application/json' },
+    body: Message
+  })
+    .then(response => {
+      console.log(response)
+      // TODO: Response
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 /**
@@ -31,7 +66,18 @@ export function Put (Link, Message) {
  * @param {String} Message
  */
 export function Get (Link, Message) {
-// TODO: Get-function
+  fetch(Link, {
+    method: 'GET',
+    headers: { 'content-type': 'application/json' },
+    body: Message
+  })
+    .then(response => {
+      console.log(response)
+      // TODO: Response
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 /**
@@ -40,5 +86,16 @@ export function Get (Link, Message) {
  * @param {String} Message
  */
 export function Delete (Link, Message) {
-// TODO: Delete-function
+  fetch(Link, {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: Message
+  })
+    .then(response => {
+      console.log(response)
+      // TODO: Response
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
