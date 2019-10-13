@@ -32,6 +32,17 @@ export function Put (Link, Message) {
  */
 export function Get (Link, Message) {
 // TODO: Get-function
+  fetch(Link, {
+    method: 'GET',
+    headers: { 'content-type': 'application/json' },
+    body: Message
+  })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }
 
 /**
