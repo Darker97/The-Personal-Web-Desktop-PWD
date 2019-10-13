@@ -8,3 +8,9 @@ export function MenüLeiste () {
 export function AppStandart (Name, coordinateX, coordinateY) {
 
 }
+
+/**
+ * Builds a desktop Envoirment
+ */
+export function Desktop () {
+}
