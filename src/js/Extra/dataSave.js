@@ -4,7 +4,7 @@
  * @param {Object} Object
  */
 export function save (ID, Object) {
-  // TODO: save
+  localStorage.setItem(ID, Object)
 }
 
 /**
@@ -12,22 +12,22 @@ export function save (ID, Object) {
  * @param {INT} ID
  */
 export function load (ID) {
-  // TODO: load
+  return localStorage.getItem(ID)
 }
 
 /**
  * safe data for this seassion under the name
- * @param {String} Name
+ * @param {String} ID
  * @param {Object} Object
  */
-export function seassionSafe (Name, Object) {
-  // TODO: seassionSafe
+export function seassionSafe (ID, Object) {
+  sessionStorage.setItem(ID, Object)
 }
 
 /**
  * Load the seassion safe with the name
- * @param {String} NAME
+ * @param {String} ID
  */
-export function sassionLoad (NAME) {
-  // TODO: seassionLoad
+export function sassionLoad (ID) {
+  return sessionStorage.getItem(ID)
 }
