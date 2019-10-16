@@ -15,7 +15,6 @@ export function generateSecret (Question) {
      */
 export function encryption (Message, Password, Secret) {
   // TODO: encryption
-  // SIEHE https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto
 }
 
 /**
@@ -27,4 +26,3 @@ export function encryption (Message, Password, Secret) {
 export function decryption (Message, Password, Secret) {
   // TODO: decryption
 }
-

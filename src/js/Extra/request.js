@@ -4,7 +4,6 @@
  * @param {String} Message
  */
 export function Pull (Link, Message) {
-// TODO: Pull-function
   fetch(Link, {
     method: 'PULL',
     headers: { 'content-type': 'application/json' },
@@ -12,7 +11,7 @@ export function Pull (Link, Message) {
   })
     .then(response => {
       console.log(response)
-      // TODO: Response
+      return response
     })
     .catch(err => {
       console.log(err)
@@ -25,7 +24,6 @@ export function Pull (Link, Message) {
  * @param {String} Message
  */
 export function Push (Link, Message) {
-// TODO: Push-function
   fetch(Link, {
     method: 'PUSH',
     headers: { 'content-type': 'application/json' },
@@ -33,7 +31,7 @@ export function Push (Link, Message) {
   })
     .then(response => {
       console.log(response)
-      // TODO: Response
+      return response
     })
     .catch(err => {
       console.log(err)
@@ -53,7 +51,7 @@ export function Put (Link, Message) {
   })
     .then(response => {
       console.log(response)
-      // TODO: Response
+      return response
     })
     .catch(err => {
       console.log(err)
@@ -73,7 +71,7 @@ export function Get (Link, Message) {
   })
     .then(response => {
       console.log(response)
-      // TODO: Response
+      return response
     })
     .catch(err => {
       console.log(err)
@@ -93,7 +91,7 @@ export function Delete (Link, Message) {
   })
     .then(response => {
       console.log(response)
-      // TODO: Response
+      return response
     })
     .catch(err => {
       console.log(err)
