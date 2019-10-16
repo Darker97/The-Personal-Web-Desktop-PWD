@@ -9,17 +9,6 @@ export function BuildUI (Object) {
   Object.appendChild(MenüFooter())
 }
 
-/**
- * gets an Application and inserts the Application-UI
- * @param {Application} Application
- * @param {Object} WorkingHtmlObject
- * @param {int} coordinateX
- * @param {int} coordinateY
- */
-export function addApplication (Application, Object, coordinateX, coordinateY) {
-  Object.appendChild(AppStandart(Application.Name, coordinateX, coordinateY))
-}
-
 /* __________________________ */
 function login() {
   WebPage.appendChild(UserInterface.headline('Welcome'))
@@ -46,16 +35,6 @@ function login() {
  */
 function MenüFooter () {
 // Todo: Menüleiste init
-}
-
-/**
- * Builds a standart Object for the App Window
- * @param {String} Name
- * @param {int} coordinateX
- * @param {int} coordinateY
- */
-function AppStandart (Name, coordinateX, coordinateY) {
-// Todo: Appstandart
 }
 
 /**

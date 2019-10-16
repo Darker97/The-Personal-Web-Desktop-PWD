@@ -9,7 +9,7 @@ const loop = []
  */
 export function loopControll () {
   loop.forEach(function (app) {
-    app.loopFunction
+    app.loopFunction()
   })
   setTimeout(loopControll, 5000)
 }
@@ -36,6 +36,6 @@ export function deleteFromLoop (Application) {
 export function PrintRunningApps () {
   let i = ''
   loop.forEach(function (app) {
-    i = i + app.name
+    i = i + '-' + app.name
   })
 }
