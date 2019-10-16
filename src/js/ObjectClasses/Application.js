@@ -20,4 +20,18 @@ export class Application {
     this.PositionY = PositionY
     this.function = loopFunction
   }
+
+  /**
+ * changes the Koordiantes of the Application
+ * @param {int} x
+ * @param {int} y
+ */
+  changeKoordinates (x, y) {
+    this.PositionX = x
+    this.PositionY = y
+  }
+
+  loop () {
+    this.function
+  }
 }
