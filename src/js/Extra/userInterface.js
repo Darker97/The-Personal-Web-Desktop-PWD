@@ -72,3 +72,10 @@ export function footer () {
   temp.appendChild(label('Always Happy Coding'))
   return temp
 }
+
+export function password (name) {
+  const temp = document.createElement('input')
+  temp.type = 'password'
+  temp.placeholder = name
+  return temp
+}
