@@ -1,8 +1,6 @@
 import * as UserInterface from './Extra/userInterface.js'
 import * as UI from './Main/UI.js'
 
-console.log('Hello World!')
-
 // TODO: Starter Loop
 
 /* ---------------------------------- */
@@ -40,3 +38,4 @@ function DesktopAndStart(params) {
     WebPage.appendChild(UI.Desktop())
 }
 /* ---------------------------------- */
+mainStart()

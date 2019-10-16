@@ -1,4 +1,4 @@
-class Application {
+export class Application {
   /**
    * Constructor for the Application Object
    * @param {String} name 
