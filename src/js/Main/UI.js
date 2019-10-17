@@ -23,8 +23,8 @@ function login() {
 
   WebPage.appendChild('button')
 
-  button.addEventListener('click', function {
-      // TODO: Add Function
+  button.addEventListener('click', function () {
+    // TODO: Add Function
   })
 }
 /* __________________________ */
@@ -33,8 +33,24 @@ function login() {
  * builds a Menü
  * @returns MenüObject
  */
-function MenüFooter () {
-// Todo: Menüleiste init
+function MenüFooter (apps) {
+  const tempLeiste = document.createElement('menuleiste')
+
+  apps.forEach(element => {
+    // Build your app
+
+    const tempApp = document.createElement('button')
+    tempApp.title = element.name
+    console.log(element.Icon)
+    tempApp.style.background = "url('" + '../js/App/icons/' + element.Icon + "')"
+    tempApp.style.backgroundSize = 'cover'
+
+    tempApp.addEventListener('click', function () {
+      MainSystem.addToLoop(element)
+    })
+    tempLeiste.appendChild(tempApp)
+  })
+  return tempLeiste
 }
 
 /**
