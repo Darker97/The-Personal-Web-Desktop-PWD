@@ -1,4 +1,4 @@
-import { addToLoop } from '../Main/MainSystem.js'
+import { headline3 } from '../Extra/userInterface.js'
 
 /**
  * gets an Application and inserts the Application-UI
@@ -8,8 +8,12 @@ import { addToLoop } from '../Main/MainSystem.js'
  * @param {int} coordinateY
  */
 export function addApplication (Application, coordinateX, coordinateY) {
-  addToLoop(Application)
-  return AppStandartUI(Application.Name, Application.coordinateX, Application.coordinateY)
+  const temp = AppStandartUI(Application.name, Application.coordinateX, Application.coordinateY)
+  const content = document.createElement('div')
+  content.id = 'content'
+  content.appendChild(Application.setupFunction)
+  temp.appendChild(content)
+  return temp
 }
 
 /**
@@ -19,6 +23,9 @@ export function addApplication (Application, coordinateX, coordinateY) {
  * @param {int} coordinateY
  */
 function AppStandartUI (Name, coordinateX, coordinateY) {
-  // Todo: Appstandart
-
+  const tempApp = document.createElement('div')
+  tempApp.id = 'Application'
+  tempApp.appendChild(headline3(Name))
+  tempApp.style.position = coordinateX + ' ' + coordinateY
+  return tempApp
 }

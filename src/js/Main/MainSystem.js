@@ -1,7 +1,10 @@
 import { Application } from '../ObjectClasses/Application.js'
+import { addApplication } from '../Main/UI-APP.js'
 
 /* __________________________ */
 const loop = []
+const x = 10
+const y = 10
 /* __________________________ */
 
 /**
@@ -18,6 +21,9 @@ export function loopControll () {
  * @param {Application} Application
  */
 export function addToLoop (Application) {
+  console.log('start App: ' + Application.name)
+  nextPosition(Application)
+  document.getElementsByTagName('desktop')[0].appendChild(addApplication(Application, Application.PositionX, Application.PositionY))
   loop.push(Application)
 }
 
@@ -38,4 +44,15 @@ export function PrintRunningApps () {
   loop.forEach(function (app) {
     i = i + '-' + app.name
   })
+  return i
+}
+
+function nextPosition (Application) {
+  loop.forEach(element => {
+    if (element.PositionX === Application.PositionX && element.PositionY === Application.PositionY) {
+      Application.PositionX += 5
+      Application.PositionY += 5
+    }
+  })
+  return Application
 }

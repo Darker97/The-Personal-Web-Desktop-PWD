@@ -1,16 +1,17 @@
 import * as ui from '../Extra/userInterface.js'
+import * as MainSystem from '../Main/MainSystem.js'
 
 /**
  * Builds the normal Desktop UI and adds it to the Objects
  * @param {Object} WorkingHtmlObject
  */
-export function BuildUI (Object) {
-  Object.appendChild(Desktop())
-  Object.appendChild(MenüFooter())
+export function BuildUI (Object, apps) {
+  document.body.appendChild(Desktop())
+  document.body.appendChild(MenüFooter(apps))
 }
 
 /* __________________________ */
-function login() {
+function login (WebPage, UserInterface) {
   WebPage.appendChild(UserInterface.headline('Welcome'))
   WebPage.appendChild(UserInterface.headline('Please Lock in'))
 
@@ -23,8 +24,8 @@ function login() {
 
   WebPage.appendChild('button')
 
-  button.addEventListener('click', function {
-      // TODO: Add Function
+  button.addEventListener('click', function () {
+    // TODO: Add Function
   })
 }
 /* __________________________ */
@@ -33,8 +34,24 @@ function login() {
  * builds a Menü
  * @returns MenüObject
  */
-function MenüFooter () {
-// Todo: Menüleiste init
+function MenüFooter (apps) {
+  const tempLeiste = document.createElement('menuleiste')
+
+  apps.forEach(element => {
+    // Build your app
+
+    const tempApp = document.createElement('button')
+    tempApp.title = element.name
+    console.log(element.Icon)
+    tempApp.style.background = "url('" + '../js/App/icons/' + element.Icon + "')"
+    tempApp.style.backgroundSize = 'cover'
+
+    tempApp.addEventListener('click', function () {
+      MainSystem.addToLoop(element)
+    })
+    tempLeiste.appendChild(tempApp)
+  })
+  return tempLeiste
 }
 
 /**
@@ -42,5 +59,5 @@ function MenüFooter () {
  * @returns desktopObject
  */
 function Desktop () {
-  // TODO: Desktop init
+  return document.createElement('desktop')
 }
