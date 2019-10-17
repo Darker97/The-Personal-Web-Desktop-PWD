@@ -1,16 +1,17 @@
 import * as ui from '../Extra/userInterface.js'
+import * as MainSystem from '../Main/MainSystem.js'
 
 /**
  * Builds the normal Desktop UI and adds it to the Objects
  * @param {Object} WorkingHtmlObject
  */
-export function BuildUI (Object) {
-  Object.appendChild(Desktop())
-  Object.appendChild(MenüFooter())
+export function BuildUI (Object, apps) {
+  document.body.appendChild(Desktop())
+  document.body.appendChild(MenüFooter(apps))
 }
 
 /* __________________________ */
-function login() {
+function login (WebPage, UserInterface) {
   WebPage.appendChild(UserInterface.headline('Welcome'))
   WebPage.appendChild(UserInterface.headline('Please Lock in'))
 
@@ -58,5 +59,5 @@ function MenüFooter (apps) {
  * @returns desktopObject
  */
 function Desktop () {
-  // TODO: Desktop init
+  return document.createElement('desktop')
 }
