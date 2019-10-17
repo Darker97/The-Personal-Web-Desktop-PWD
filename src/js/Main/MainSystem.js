@@ -1,7 +1,10 @@
 import { Application } from '../ObjectClasses/Application.js'
+import { addApplication } from '../Main/UI-APP.js'
 
 /* __________________________ */
 const loop = []
+const x = 10
+const y = 10
 /* __________________________ */
 
 /**
