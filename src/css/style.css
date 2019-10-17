@@ -31,6 +31,10 @@ menuleiste button{
     text-align: center;
     overflow: hidden;
 }
+
+#Application h3{
+    line-height: 0px;
+}
 #Application #content{
     background-color: grey;
     width: 390px;

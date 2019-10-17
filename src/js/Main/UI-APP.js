@@ -9,7 +9,7 @@ import { headline3 } from '../Extra/userInterface.js'
  */
 export function addApplication (Application, coordinateX, coordinateY) {
   const temp = AppStandartUI(Application.name, Application.coordinateX, Application.coordinateY)
-  const content = document.createElement('iframe')
+  const content = document.createElement('div')
   content.id = 'content'
   content.appendChild(Application.setupFunction)
   temp.appendChild(content)
