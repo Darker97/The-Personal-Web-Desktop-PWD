@@ -32,7 +32,7 @@ export function addToLoop (Application) {
  * @param {Application} Application
  */
 export function deleteFromLoop (Application) {
-  const i = loop.findIndex(Application)
+  const i = loop.indexOf(Application)
   loop.splice(i, 1)
 }
 

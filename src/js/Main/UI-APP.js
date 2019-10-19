@@ -28,10 +28,23 @@ export function addApplication (Application, coordinateX, coordinateY) {
  * @param {int} PositionX
  * @param {int} PositionY
  */
-function AppStandartUI (Name, PositionX, PositionY) {
+function AppStandartUI (Name, PositionX, PositionY, Application) {
   const tempApp = document.createElement('div')
   tempApp.id = 'Application'
-  var header = headline3(Name)
+  var header = document.createElement('div')
+  header.id = 'header'
+
+  var close = button('')
+  close.addEventListener('click', function () {
+    Application.killFunction(Application)
+    deleteFromLoop(Application)
+  })
+  tempApp.appendChild(close)
+
+  close.title = 'close'
+  close.style.background = "url('../image/close.png')"
+
+  header.appendChild(headline3(Name))
   tempApp.appendChild(header)
 
   tempApp.style.top = PositionX
