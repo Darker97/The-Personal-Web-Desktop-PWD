@@ -1,8 +1,9 @@
 export function setup () {
-
+  // returns the UI Object.
+  return null
 }
 
-export function loop () {
+export function loop (app) {
 
 }
 
