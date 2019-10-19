@@ -21,10 +21,12 @@ export function loopControll () {
  * @param {Application} Application
  */
 export function addToLoop (Application) {
-  console.log('start App: ' + Application.name)
-  nextPosition(Application)
-  document.getElementsByTagName('desktop')[0].appendChild(addApplication(Application, Application.PositionX, Application.PositionY))
-  loop.push(Application)
+  const temp = Object.create(Application)
+  console.log('start App: ' + temp.name)
+  nextPosition(temp)
+  document.getElementsByTagName('desktop')[0].appendChild(addApplication(temp, temp.PositionX, temp.PositionY))
+  loop.push(temp)
+  temp.PID = loop.length
 }
 
 /**
