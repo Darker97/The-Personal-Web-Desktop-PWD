@@ -49,7 +49,7 @@ export function PrintRunningApps () {
 
 export function nextPosition (Application) {
   loop.forEach(element => {
-    if (element.workinkObject.style.top === Application.PositionX && element.workinkObject.style.left === Application.PositionY) {
+    if (element.APPObject.style.top === Application.PositionX && element.APPObject.style.left === Application.PositionY) {
       Application.PositionX += 5
       Application.PositionY += 5
     }

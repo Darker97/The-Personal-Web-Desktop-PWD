@@ -1,5 +1,5 @@
-import { headline3 } from '../Extra/userInterface.js'
-import { nextPosition } from '../Main/MainSystem.js'
+import { headline3, button } from '../Extra/userInterface.js'
+import { nextPosition, deleteFromLoop } from '../Main/MainSystem.js'
 
 /**
  * gets an Application and inserts the Application-UI
@@ -10,15 +10,23 @@ import { nextPosition } from '../Main/MainSystem.js'
  */
 export function addApplication (Application, coordinateX, coordinateY) {
   nextPosition(Application)
-  const temp = AppStandartUI(Application.name, Application.PositionX, Application.PositionY)
+  // Build the plattform
+  const temp = AppStandartUI(Application.name, Application.PositionX, Application.PositionY, Application)
   const content = document.createElement('div')
   content.id = 'content'
-  content.appendChild(Application.setupFunction)
+
+  // add the app
+  const TheAppItself = Application.setup()
+  content.appendChild(TheAppItself)
+
+  // Adding the new Elements to the Object
   Application.workinkObject = content
+  Application.APPObject = temp
   temp.appendChild(content)
 
   dragElement(temp)
 
+  content.onmousedown = null
   return temp
 }
 
