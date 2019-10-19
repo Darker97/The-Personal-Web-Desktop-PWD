@@ -4,15 +4,20 @@ export function setup () {
   return UI()
 }
 
-let i = 0
 export function loop (Application) {
-  console.log('HI - ' + i)
-  i++
-  Application.workinkObject.appendChild(headline('test'))
+  if (Application.save === undefined) {
+    Application.save = 0
+  }
+  console.log('HI - ' + Application.save)
+  Application.save++
+  Application.workinkObject.innerHTML = ''
+  Application.workinkObject.appendChild(headline('test ' + Application.save))
 }
 
-export function kill () {
-
+export function kill (app) {
+  console.log(app.name + ' kill')
+  const temp = app.workinkObject.parentElement
+  temp.parentElement.removeChild(temp)
 }
 
 function UI () {
