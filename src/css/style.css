@@ -25,19 +25,40 @@ menuleiste button{
 }
 
 #Application{
-    background-color: blue;
-    width: 400px;
-    height: 300px;
+    background-color:rgba(9, 22, 138, 0.568);
+    position: absolute;
+    cursor: move;
+    width: 560px;
+    height: 350px;
     text-align: center;
     overflow: hidden;
+    border-radius: 8px;
+    border-block-color: black;
+    border-style: solid;
 }
 
 #Application h3{
     line-height: 0px;
+    color: white;
 }
+
+#Application #header{
+    display: block;
+}
+
+#Application button{
+    left: 0px;
+    top: 0px;
+    height: 26px;
+    width: 26px;
+    float: left;
+}
+
 #Application #content{
     background-color: grey;
-    width: 390px;
-    height: 280px;
+    cursor: default;
+    width: 560px;
+    height: 320px;
     vertical-align: text-bottom;
+    overflow-y: auto;
 }

@@ -12,7 +12,7 @@ const y = 10
  */
 export function loopControll () {
   loop.forEach(function (app) {
-    app.loopFunction()
+    app.loopFunction(app)
   })
   setTimeout(loopControll, 5000)
 }
@@ -21,10 +21,12 @@ export function loopControll () {
  * @param {Application} Application
  */
 export function addToLoop (Application) {
-  console.log('start App: ' + Application.name)
-  nextPosition(Application)
-  document.getElementsByTagName('desktop')[0].appendChild(addApplication(Application, Application.PositionX, Application.PositionY))
-  loop.push(Application)
+  const temp = Object.create(Application)
+  console.log('start App: ' + temp.name)
+  nextPosition(temp)
+  document.getElementsByTagName('desktop')[0].appendChild(addApplication(temp, temp.PositionX, temp.PositionY))
+  loop.push(temp)
+  temp.PID = loop.length
 }
 
 /**
@@ -32,7 +34,7 @@ export function addToLoop (Application) {
  * @param {Application} Application
  */
 export function deleteFromLoop (Application) {
-  const i = loop.findIndex(Application)
+  const i = loop.indexOf(Application)
   loop.splice(i, 1)
 }
 
@@ -47,9 +49,9 @@ export function PrintRunningApps () {
   return i
 }
 
-function nextPosition (Application) {
+export function nextPosition (Application) {
   loop.forEach(element => {
-    if (element.PositionX === Application.PositionX && element.PositionY === Application.PositionY) {
+    if (element.APPObject.style.top === Application.PositionX && element.APPObject.style.left === Application.PositionY) {
       Application.PositionX += 5
       Application.PositionY += 5
     }
