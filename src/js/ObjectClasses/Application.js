@@ -10,8 +10,9 @@ export class Application {
    * @param {int} PositionY
    * @param {function} loopFunction
    * @param {function} setupFunction
+   * @param {Element} workinkObject
    */
-  constructor (name, ID, PID, Info, ICON, PositionX, PositionY, loopFunction, setupFunction) {
+  constructor (name, ID, PID, Info, ICON, PositionX, PositionY, loopFunction, setupFunction, workinkObject) {
     this.name = name
     this.ID = ID
     this.PID = PID
@@ -21,6 +22,7 @@ export class Application {
     this.PositionY = PositionY
     this.loopFunction = loopFunction
     this.setupFunction = setupFunction
+    this.workinkObject = workinkObject
   }
 
   /**

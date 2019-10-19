@@ -12,7 +12,7 @@ const y = 10
  */
 export function loopControll () {
   loop.forEach(function (app) {
-    app.loopFunction()
+    app.loopFunction(app)
   })
   setTimeout(loopControll, 5000)
 }
@@ -47,9 +47,9 @@ export function PrintRunningApps () {
   return i
 }
 
-function nextPosition (Application) {
+export function nextPosition (Application) {
   loop.forEach(element => {
-    if (element.PositionX === Application.PositionX && element.PositionY === Application.PositionY) {
+    if (element.workinkObject.style.top === Application.PositionX && element.workinkObject.style.left === Application.PositionY) {
       Application.PositionX += 5
       Application.PositionY += 5
     }
