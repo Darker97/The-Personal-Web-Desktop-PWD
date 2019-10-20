@@ -20,9 +20,9 @@ export function loopControll () {
  * @param {Application} Application
  */
 export function addToLoop (Application) {
-  const temp = Object.create(Application)
+  let temp = Object.create(Application)
   console.log('start App: ' + temp.name)
-  nextPosition(temp)
+  temp = nextPosition(temp)
   document.getElementsByTagName('desktop')[0].appendChild(addApplication(temp, temp.PositionX, temp.PositionY))
   loop.push(temp)
   temp.PID = loop.length
@@ -48,12 +48,27 @@ export function PrintRunningApps () {
   return i
 }
 
+/**
+ * RECURSIV Function
+ * Will Check if the new position of the application is already taken and find a new spot for the app.
+ * If we reach the Border of the field, we will start on the upper or left side, depending on the Border we have hit.
+ * @param {*} Application 
+ */
 export function nextPosition (Application) {
   loop.forEach(element => {
-    if (element.APPObject.style.top === Application.PositionX && element.APPObject.style.left === Application.PositionY) {
-      Application.PositionX += 5
-      Application.PositionY += 5
+    if (element.workinkObject.parentElement.style.top === Application.PositionX.toString() + 'px' && element.workinkObject.parentElement.style.left === Application.PositionY.toString() + 'px') {
+      Application.PositionX += 10
+      Application.PositionY += 10
     }
   })
+  if (Application.PositionX + 350 > window.screen.availHeight) {
+    Application.PositionX = 0
+    return nextPosition(Application)
+  }
+  if (Application.PositionY + 250 > window.screen.availWidth) {
+    Application.PositionY = 0
+    Application.PositionY = 350
+    return nextPosition(Application)
+  }
   return Application
 }

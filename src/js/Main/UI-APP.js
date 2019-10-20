@@ -55,8 +55,8 @@ function AppStandartUI (Name, PositionX, PositionY, Application) {
   header.appendChild(headline3(Name))
   tempApp.appendChild(header)
 
-  tempApp.style.top = PositionX
-  tempApp.style.left = PositionY
+  tempApp.style.top = PositionX.toString() + 'px'
+  tempApp.style.left = PositionY.toString() + 'px'
   return tempApp
 }
 
