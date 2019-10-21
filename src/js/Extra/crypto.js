@@ -4,7 +4,14 @@
  * @param {String} Question
  */
 export function generateSecret (Question) {
-  // TODO: generateSecret
+  const arr = new Uint32Array(32)
+  window.crypto.getRandomValues(arr)
+  let tempString = ''
+
+  arr.forEach(element => {
+    tempString += element.toString()
+  })
+  return tempString
 }
 
 /**
@@ -14,7 +21,7 @@ export function generateSecret (Question) {
      * @param {String} Secret
      */
 export function encryption (Message, Password, Secret) {
-  // TODO: encryption
+  return crypto.subtle.encrypt({ name: 'RSA-OAEP' }, Password + Secret, Message)
 }
 
 /**
@@ -24,5 +31,5 @@ export function encryption (Message, Password, Secret) {
      * @param {String} Secret
      */
 export function decryption (Message, Password, Secret) {
-  // TODO: decryption
+  return crypto.subtle.decrypt({ name: 'RSA-OAEP' }, Password + Secret, Message)
 }
