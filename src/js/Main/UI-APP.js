@@ -87,6 +87,10 @@ function dragElement (element) {
   function elementDrag (e) {
     e = e || window.event
     e.preventDefault()
+
+    // Set the new focus on the selected element
+    setNewFocus(element)
+
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX
     pos2 = pos4 - e.clientY
@@ -102,4 +106,16 @@ function dragElement (element) {
     document.onmouseup = null
     document.onmousemove = null
   }
+}
+
+let lastElement
+function setNewFocus (element) {
+  if (lastElement !== undefined) {
+    // give the clicked element focus and put it to the front
+    lastElement.style.zIndex = 0
+    lastElement.blur()
+    element.focus()
+    element.style.zIndex = 1000
+  }
+  lastElement = element
 }
