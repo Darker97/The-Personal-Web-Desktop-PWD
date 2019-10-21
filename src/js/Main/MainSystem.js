@@ -2,8 +2,6 @@ import { addApplication } from '../Main/UI-APP.js'
 
 /* __________________________ */
 const loop = []
-const x = 10
-const y = 10
 /* __________________________ */
 
 /**
@@ -52,7 +50,7 @@ export function PrintRunningApps () {
  * RECURSIV Function
  * Will Check if the new position of the application is already taken and find a new spot for the app.
  * If we reach the Border of the field, we will start on the upper or left side, depending on the Border we have hit.
- * @param {*} Application 
+ * @param {Application} Application
  */
 export function nextPosition (Application) {
   loop.forEach(element => {
@@ -67,7 +65,7 @@ export function nextPosition (Application) {
   }
   if (Application.PositionY + 250 > window.screen.availWidth) {
     Application.PositionY = 0
-    Application.PositionY = 350
+    Application.PositionX = 350
     return nextPosition(Application)
   }
   return Application
