@@ -13,7 +13,7 @@ export class Application {
    * @param {Element} workinkObject
    * @param {function} killFunction
    */
-  constructor (name, ID, PID, Info, ICON, PositionX, PositionY, loopFunction, setupFunction, killFunction) {
+  constructor (name, ID, PID, Info, ICON, PositionX, PositionY, loopFunction, setupFunction, killFunction, focus) {
     this.name = name
     this.ID = ID
     this.PID = PID
@@ -25,6 +25,7 @@ export class Application {
     this.setupFunction = setupFunction
     this.workinkObject = null
     this.killFunction = killFunction
+    this.focus = focus
   }
 
   /**
