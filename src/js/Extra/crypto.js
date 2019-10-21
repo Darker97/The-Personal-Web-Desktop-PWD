@@ -4,7 +4,14 @@
  * @param {String} Question
  */
 export function generateSecret (Question) {
-  // TODO: generateSecret
+  const arr = new Uint32Array(32)
+  window.crypto.getRandomValues(arr)
+  let tempString = ''
+
+  arr.forEach(element => {
+    tempString += element.toString()
+  })
+  return tempString
 }
 
 /**
