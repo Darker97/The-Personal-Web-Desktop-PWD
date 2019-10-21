@@ -1,3 +1,5 @@
+import * as UIscript from '../Extra/userInterface.js'
+
 /**
  * Everything that your App needs to do first
  * Load save states, create the UI etc.
@@ -30,7 +32,14 @@ export function kill (app) {
  */
 function UI () {
   const temp = document.createElement('div')
-  // YOUR CODE HERE
+  const content = document.createElement('div')
+  content.id = 'chat-Content'
+  temp.appendChild(content)
+  const input = UIscript.input('Chat')
+  input.addEventListener('submit', function () {
+    sent(input.value)
+  })
+  temp.appendChild(input)
   return temp
 }
 
@@ -46,4 +55,46 @@ export function minimising () {
  *  */
 export function focus (app) {
   // YOUR CODE HERE
+}
+
+/* ---------------------------- */
+/**
+ * const for the Application
+ */
+const key = 'eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd'
+const username = ''
+
+/**
+ * sends a given Message to the Websocket
+ * @param {String} Message
+ */
+function sent (Message) {
+  const request = {}
+  request.data = Message
+  request.key = key
+  request.type = 'message'
+  request.username = username
+  console.log(request)
+  
+}
+
+/**
+ * gets a new Message from the Server and displays it
+ * @param {HTMLElement} element
+ * @param {String} Message
+ */
+function gotNewMessage (Message) {
+  save(Message)
+  const MessageObject = document.createElement('p')
+  MessageObject.id = 'Chat-Message'
+  MessageObject.innerText = Message
+  document.getElementById('chat-Content').appendChild(MessageObject)
+}
+
+function save (params) {
+
+}
+
+function load (params) {
+
 }
