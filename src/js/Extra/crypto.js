@@ -31,5 +31,5 @@ export function encryption (Message, Password, Secret) {
      * @param {String} Secret
      */
 export function decryption (Message, Password, Secret) {
-  // TODO: decryption
+  return crypto.subtle.decrypt({ name: 'RSA-OAEP' }, Password + Secret, Message)
 }
