@@ -1,5 +1,5 @@
 import * as UIscript from '../Extra/userInterface.js'
-
+import * as dataSave from '../Extra/dataSave.js'
 /**
  * Everything that your App needs to do first
  * Load save states, create the UI etc.
@@ -11,6 +11,7 @@ export function setup () {
 
 /**
  * used for all functions that have to be checked regulary
+ * Not uses in this case
  * @param {Application} Application
  */
 export function loop (Application) {
@@ -36,8 +37,12 @@ function UI () {
   content.id = 'chat-Content'
   temp.appendChild(content)
   const input = UIscript.input('Chat')
-  input.addEventListener('submit', function () {
-    sent(input.value)
+  input.id = 'chat-input'
+  input.addEventListener('change', function () {
+    if (input.value !== '') {
+      sent(input.value)
+    }
+    input.value = ''
   })
   temp.appendChild(input)
   return temp
@@ -55,6 +60,7 @@ export function minimising () {
  *  */
 export function focus (app) {
   // YOUR CODE HERE
+  document.getElementById('chat-input').focus()
 }
 
 /* ---------------------------- */
@@ -75,7 +81,7 @@ function sent (Message) {
   request.type = 'message'
   request.username = username
   console.log(request)
-  
+
 }
 
 /**
@@ -91,10 +97,11 @@ function gotNewMessage (Message) {
   document.getElementById('chat-Content').appendChild(MessageObject)
 }
 
-function save (params) {
+/* ------------------------------- */
+// Save ID is "Chat"
 
+function save (params) {
 }
 
 function load (params) {
-
 }
