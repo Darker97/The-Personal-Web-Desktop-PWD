@@ -3,6 +3,7 @@
  * Load save states, create the UI etc.
  */
 export function setup () {
+  // YOUR CODE HERE
   return UI()
 }
 
@@ -11,6 +12,7 @@ export function setup () {
  * @param {Application} Application
  */
 export function loop (Application) {
+  // YOUR CODE HERE
 }
 
 /**
@@ -37,4 +39,11 @@ function UI () {
  */
 export function minimising () {
 
+}
+
+/**
+ * If the App gets in Focus, this function should focus the right things
+ *  */
+export function focus (app) {
+  // YOUR CODE HERE
 }

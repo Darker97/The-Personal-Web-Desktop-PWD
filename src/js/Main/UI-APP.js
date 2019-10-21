@@ -65,7 +65,7 @@ function AppStandartUI (Name, PositionX, PositionY, Application) {
  * ads a function to the element so we can toss it arround
  * @param {HTMLElement} element
  */
-function dragElement (element) {
+function dragElement (element, Application) {
   // TODO: ---
   var pos1
   var pos2
@@ -89,7 +89,7 @@ function dragElement (element) {
     e.preventDefault()
 
     // Set the new focus on the selected element
-    setNewFocus(element)
+    setNewFocus(element, Application)
 
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX
@@ -109,11 +109,12 @@ function dragElement (element) {
 }
 
 let lastElement
-function setNewFocus (element) {
+function setNewFocus (element, Application) {
   if (lastElement !== undefined) {
     // give the clicked element focus and put it to the front
     lastElement.style.zIndex = 0
     lastElement.blur()
+    Application.focus(Application)
     element.focus()
     element.style.zIndex = 1000
   }
