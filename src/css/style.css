@@ -62,3 +62,15 @@ menuleiste button{
     vertical-align: text-bottom;
     overflow-y: auto;
 }
+
+
+#chat-Content {
+    height: 280px;
+    width: 560px;
+    
+}
+
+#chat-input{
+    width: 540px;
+    border-radius: 8px;
+}
