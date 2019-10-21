@@ -21,7 +21,7 @@ export function generateSecret (Question) {
      * @param {String} Secret
      */
 export function encryption (Message, Password, Secret) {
-  // TODO: encryption
+  return crypto.subtle.encrypt({ name: 'RSA-OAEP' }, Password + Secret, Message)
 }
 
 /**
