@@ -29,3 +29,6 @@ function UI () {
 export function minimising () {
 
 }
+
+export function focus (app) {
+}

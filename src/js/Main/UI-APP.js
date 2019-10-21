@@ -55,8 +55,8 @@ function AppStandartUI (Name, PositionX, PositionY, Application) {
   header.appendChild(headline3(Name))
   tempApp.appendChild(header)
 
-  tempApp.style.top = PositionX
-  tempApp.style.left = PositionY
+  tempApp.style.top = PositionX.toString() + 'px'
+  tempApp.style.left = PositionY.toString() + 'px'
   return tempApp
 }
 
@@ -66,6 +66,7 @@ function AppStandartUI (Name, PositionX, PositionY, Application) {
  * @param {HTMLElement} element
  */
 function dragElement (element) {
+  // TODO: ---
   var pos1
   var pos2
   var pos3
@@ -86,6 +87,10 @@ function dragElement (element) {
   function elementDrag (e) {
     e = e || window.event
     e.preventDefault()
+
+    // Set the new focus on the selected element
+    setNewFocus(element)
+
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX
     pos2 = pos4 - e.clientY
@@ -101,4 +106,16 @@ function dragElement (element) {
     document.onmouseup = null
     document.onmousemove = null
   }
+}
+
+let lastElement
+function setNewFocus (element) {
+  if (lastElement !== undefined) {
+    // give the clicked element focus and put it to the front
+    lastElement.style.zIndex = 0
+    lastElement.blur()
+    element.focus()
+    element.style.zIndex = 1000
+  }
+  lastElement = element
 }
