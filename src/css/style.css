@@ -69,6 +69,23 @@ menuleiste button{
     width: 560px;
     overflow-y: auto;
     line-break: strict;
+    background-color: azure;
+    background-image: url('../js/App/img/Chatbackround.jpg');
+    border-radius: 8px;
+}
+#chat-Content p{
+    border-block-color: black;
+    border-block-style: solid;
+    border-block-width: 1px;
+    border-radius: 8px;
+}
+
+#Chat-Message {
+    background-color: rgba(202, 201, 201, 0.87);
+}
+
+#Chat-Message-Server {
+    background-color: rgba(255, 255, 255, 0.418);
 }
 
 #chat-input{
