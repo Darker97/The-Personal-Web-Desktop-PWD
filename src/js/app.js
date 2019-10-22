@@ -1,4 +1,4 @@
-import { BuildUI } from './Main/UI.js'
+import { BuildUI, login } from './Main/UI.js'
 import { loopControll } from './Main/MainSystem.js'
 import { appInit } from './Main/Infobuild.js'
 
@@ -10,11 +10,11 @@ const Apps = appInit()
 /**
  * starts the functions and builds the UI
  */
-function mainStart () {
+export function mainStart () {
   loopControll()
   BuildUI(WebPage, Apps)
 }
 
 /* ---------------------------------- */
 console.log('Hello World!')
-mainStart()
+login(WebPage)
