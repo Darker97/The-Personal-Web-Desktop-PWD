@@ -16,7 +16,7 @@ export function addApplication (Application, coordinateX, coordinateY) {
   content.id = 'content'
 
   // add the app
-  const TheAppItself = Application.setup()
+  const TheAppItself = Application.setupFunction(Application)
   content.appendChild(TheAppItself)
 
   // Adding the new Elements to the Object
@@ -24,7 +24,7 @@ export function addApplication (Application, coordinateX, coordinateY) {
   Application.APPObject = temp
   temp.appendChild(content)
 
-  dragElement(temp)
+  dragElement(temp, Application)
 
   content.onmousedown = null
   return temp
@@ -79,6 +79,10 @@ function dragElement (element, Application) {
     // get the mouse cursor position at startup:
     pos3 = e.clientX
     pos4 = e.clientY
+
+    // Set the new focus on the selected element
+    setNewFocus(element, Application)
+
     document.onmouseup = closeDragElement
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag
@@ -87,9 +91,6 @@ function dragElement (element, Application) {
   function elementDrag (e) {
     e = e || window.event
     e.preventDefault()
-
-    // Set the new focus on the selected element
-    setNewFocus(element, Application)
 
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX
@@ -114,8 +115,8 @@ function setNewFocus (element, Application) {
     // give the clicked element focus and put it to the front
     lastElement.style.zIndex = 0
     lastElement.blur()
-    Application.focus(Application)
-    element.focus()
+    Application.focus(element)
+
     element.style.zIndex = 1000
   }
   lastElement = element
