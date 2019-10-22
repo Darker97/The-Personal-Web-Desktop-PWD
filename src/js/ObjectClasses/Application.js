@@ -10,8 +10,10 @@ export class Application {
    * @param {int} PositionY
    * @param {function} loopFunction
    * @param {function} setupFunction
+   * @param {Element} workinkObject
+   * @param {function} killFunction
    */
-  constructor (name, ID, PID, Info, ICON, PositionX, PositionY, loopFunction, setupFunction) {
+  constructor (name, ID, PID, Info, ICON, PositionX, PositionY, loopFunction, setupFunction, killFunction, focus) {
     this.name = name
     this.ID = ID
     this.PID = PID
@@ -21,6 +23,9 @@ export class Application {
     this.PositionY = PositionY
     this.loopFunction = loopFunction
     this.setupFunction = setupFunction
+    this.workinkObject = null
+    this.killFunction = killFunction
+    this.focus = focus
   }
 
   /**
@@ -31,9 +36,5 @@ export class Application {
   changeKoordinates (x, y) {
     this.PositionX = x
     this.PositionY = y
-  }
-
-  loop () {
-    this.loopFunction
   }
 }

@@ -1,4 +1,3 @@
-import * as ui from '../Extra/userInterface.js'
 import * as MainSystem from '../Main/MainSystem.js'
 
 /**
@@ -11,7 +10,7 @@ export function BuildUI (Object, apps) {
 }
 
 /* __________________________ */
-function login (WebPage, UserInterface) {
+export function login (WebPage, UserInterface) {
   WebPage.appendChild(UserInterface.headline('Welcome'))
   WebPage.appendChild(UserInterface.headline('Please Lock in'))
 
@@ -42,7 +41,7 @@ function MenüFooter (apps) {
 
     const tempApp = document.createElement('button')
     tempApp.title = element.name
-    console.log(element.Icon)
+    // console.log(element.Icon)
     tempApp.style.background = "url('" + '../js/App/icons/' + element.Icon + "')"
     tempApp.style.backgroundSize = 'cover'
 
