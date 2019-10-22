@@ -2,7 +2,7 @@
  * Everything that your App needs to do first
  * Load save states, create the UI etc.
  */
-export function setup () {
+export function setup (app) {
   // YOUR CODE HERE
   return UI()
 }
@@ -28,7 +28,7 @@ export function kill (app) {
 /**
  * Creates the UI of the APP
  */
-function UI () {
+function UI (app) {
   const temp = document.createElement('div')
   // YOUR CODE HERE
   return temp
@@ -44,6 +44,6 @@ export function minimising () {
 /**
  * If the App gets in Focus, this function should focus the right things
  *  */
-export function focus (app) {
+export function focus (element) {
   // YOUR CODE HERE
 }
