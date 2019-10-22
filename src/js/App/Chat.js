@@ -100,12 +100,16 @@ function sent (Message, app) {
  * @param {HTMLElement} element
  * @param {String} Message
  */
-function gotNewMessage (Message) {
-  save(Message)
-  const MessageObject = document.createElement('p')
-  MessageObject.id = 'Chat-Message'
-  MessageObject.innerText = Message
-  document.getElementById('chat-Content').appendChild(MessageObject)
+function gotNewMessage (Message, app) {
+  const temp = JSON.parse(Message)
+  if (temp.type !== 'heartbeat') {
+    save(temp)
+    const MessageObject = document.createElement('p')
+    MessageObject.id = 'Chat-Message'
+    MessageObject.innerText = temp.username + ':   ' + temp.data
+
+    app.content.appendChild(MessageObject)
+  }
 }
 
 /* ------------------------------- */
