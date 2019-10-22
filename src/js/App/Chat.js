@@ -7,6 +7,9 @@ import * as dataSave from '../Extra/dataSave.js'
  */
 export function setup (app) {
   app.webSocket = new WebSocket('ws://vhost3.lnu.se:20080/socket/')
+
+  username = dataSave.sassionLoad('Username')
+
   app.webSocket.onmessage = function (event) {
     console.log(event.data)
     gotNewMessage(event.data, app)
@@ -80,7 +83,7 @@ export function focus (element) {
  * const for the Application
  */
 const key = 'eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd'
-const username = 'Darker97'
+let username = ''
 
 /**
  * sends a given Message to the Websocket
