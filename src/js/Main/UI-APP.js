@@ -115,7 +115,8 @@ function setNewFocus (element, Application) {
     // give the clicked element focus and put it to the front
     lastElement.style.zIndex = 0
     lastElement.blur()
-    Application.focus(Application)
+    Application.focus(element)
+
     element.style.zIndex = 1000
   }
   lastElement = element

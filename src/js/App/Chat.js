@@ -68,10 +68,10 @@ export function minimising () {
 /**
  * If the App gets in Focus, this function should focus the right things
  *  */
-export function focus (app) {
+export function focus (element) {
   // YOUR CODE HERE
   // app.workinkObject.getElementsByClassName('input')
-  document.getElementById('chat-input').focus()
+  element.getElementsByClassName('input')[0].focus()
 }
 
 /* ---------------------------- */
