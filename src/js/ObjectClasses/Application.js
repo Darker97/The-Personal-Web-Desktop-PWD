@@ -37,8 +37,4 @@ export class Application {
     this.PositionX = x
     this.PositionY = y
   }
-
-  setup () {
-    return this.setupFunction()
-  }
 }

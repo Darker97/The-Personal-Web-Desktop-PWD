@@ -16,7 +16,7 @@ export function addApplication (Application, coordinateX, coordinateY) {
   content.id = 'content'
 
   // add the app
-  const TheAppItself = Application.setup()
+  const TheAppItself = Application.setupFunction(Application)
   content.appendChild(TheAppItself)
 
   // Adding the new Elements to the Object

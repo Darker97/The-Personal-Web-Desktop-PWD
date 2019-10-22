@@ -2,7 +2,7 @@
  * Everything that your App needs to do first
  * Load save states, create the UI etc.
  */
-export function setup () {
+export function setup (app) {
   // YOUR CODE HERE
   return UI()
 }
