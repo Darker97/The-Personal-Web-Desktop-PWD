@@ -63,7 +63,6 @@ function UI (app) {
  * not yet in use
  */
 export function minimising () {
-
 }
 
 /**
@@ -71,6 +70,7 @@ export function minimising () {
  *  */
 export function focus (app) {
   // YOUR CODE HERE
+  // app.workinkObject.getElementsByClassName('input')
   document.getElementById('chat-input').focus()
 }
 
@@ -97,18 +97,31 @@ function sent (Message, app) {
 
 /**
  * gets a new Message from the Server and displays it
+ * If it's a message from the Server itself, we create a different Object
  * @param {HTMLElement} element
  * @param {String} Message
  */
 function gotNewMessage (Message, app) {
   const temp = JSON.parse(Message)
-  if (temp.type !== 'heartbeat') {
-    save(temp)
-    const MessageObject = document.createElement('p')
-    MessageObject.id = 'Chat-Message'
-    MessageObject.innerText = temp.username + ':   ' + temp.data
 
-    app.content.appendChild(MessageObject)
+  // We don't work with the Heartbeat from the Server
+  if (temp.type !== 'heartbeat') {
+    // If it's a message from the Server, we create a different Object
+
+    if (temp.username === 'The Server') {
+      const MessageObject = document.createElement('p')
+      MessageObject.id = 'Chat-Message-Server'
+      MessageObject.innerText = temp.data
+
+      app.content.appendChild(MessageObject)
+    } else {
+      save(temp)
+      const MessageObject = document.createElement('p')
+      MessageObject.id = 'Chat-Message'
+      MessageObject.innerText = temp.username + ':   ' + temp.data
+
+      app.content.appendChild(MessageObject)
+    }
   }
 }
 
