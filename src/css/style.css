@@ -5,6 +5,30 @@ body {
     background-blend-mode: lighten;
 }
 
+main{
+    background-color: aliceblue;
+    background-image: url('../image/Backround-login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-color: black;
+    border-style: solid;
+    border-radius: 8px;
+    text-align: center;
+    left: auto;
+    align-self: center;
+}
+main input{
+    border-radius: 8px;
+    border-block-color: rgba(70, 70, 70, 0.692);
+    border-style: solid;
+}
+main button{
+    border-radius: 8px;
+    border-block-color: black;
+    border-style: solid;
+}
+
 menuleiste{
     border-style: solid;
     border-color: black;
