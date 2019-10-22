@@ -18,7 +18,7 @@ Make sure node.js and npm is installed on your system.
   - A little Test Application for testing Puposes
 
 ## important Keywords for the Save function
-### General
+### General SeassionSafe
 
 - `Username`
     -> for the Username the User is choosing
