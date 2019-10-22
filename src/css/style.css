@@ -62,3 +62,43 @@ menuleiste button{
     vertical-align: text-bottom;
     overflow-y: auto;
 }
+
+
+#chat-Content {
+    height: 270px;
+    width: 560px;
+    overflow-y: auto;
+    line-break: strict;
+    background-color: azure;
+    background-image: url('../js/App/img/Chatbackround.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 8px;
+    max-height:100%;
+}
+#chat-Content p{
+    border-block-color: black;
+    border-block-style: solid;
+    border-block-width: 1px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+#Chat-Message {
+    background-color: rgba(202, 201, 201, 0.87);
+}
+
+#Chat-Message-User{
+    background-color: rgba(56, 248, 56, 0.87);
+}
+
+#Chat-Message-Server {
+    background-color: rgba(255, 255, 255, 0.418);
+}
+
+#chat-input{
+    width: 540px;
+    height: 20px;
+    border-radius: 8px;
+}

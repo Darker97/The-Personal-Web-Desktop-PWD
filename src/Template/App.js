@@ -2,7 +2,7 @@
  * Everything that your App needs to do first
  * Load save states, create the UI etc.
  */
-export function setup () {
+export function setup (app) {
   // YOUR CODE HERE
   return UI()
 }
@@ -39,4 +39,11 @@ function UI () {
  */
 export function minimising () {
 
+}
+
+/**
+ * If the App gets in Focus, this function should focus the right things
+ *  */
+export function focus (app) {
+  // YOUR CODE HERE
 }

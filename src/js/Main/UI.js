@@ -41,7 +41,7 @@ function MenüFooter (apps) {
 
     const tempApp = document.createElement('button')
     tempApp.title = element.name
-    console.log(element.Icon)
+    // console.log(element.Icon)
     tempApp.style.background = "url('" + '../js/App/icons/' + element.Icon + "')"
     tempApp.style.backgroundSize = 'cover'
 
