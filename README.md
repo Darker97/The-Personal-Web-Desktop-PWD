@@ -1,7 +1,9 @@
-## Examination assignment 3
+# Examination assignment 3
+
 This is the assignment repo for the second assignment in the course.
 
 ## Installation
+
 Make sure node.js and npm is installed on your system.
 
 1. `npm install`
@@ -14,10 +16,11 @@ Make sure node.js and npm is installed on your system.
   - Fully Functional Chat Program with the Uni-ChatServer
 - Never Gonna give you Up
   - Self Explaining
-- Test 
+- Test
   - A little Test Application for testing Puposes
 
 ## important Keywords for the Save function
+
 ### General SeassionSafe
 
 - `Username`

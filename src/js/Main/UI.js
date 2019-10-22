@@ -32,6 +32,12 @@ export function login (WebPage) {
 
   document.body.appendChild(LoginPage)
 
+  login.addEventListener('change', function () {
+    seassionSafe('Username', login.value)
+    document.body.innerHTML = ''
+    mainStart()
+  })
+
   button.addEventListener('click', function () {
     seassionSafe('Username', login.value)
     document.body.innerHTML = ''
