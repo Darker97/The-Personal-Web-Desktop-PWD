@@ -44,6 +44,7 @@ function UI (app) {
   temp.appendChild(content)
   const input = UIscript.input('Chat')
   input.id = 'chat-input'
+  input.className = 'input'
 
   // Add to the object for later use
   app.content = content
@@ -114,6 +115,15 @@ function gotNewMessage (Message, app) {
       MessageObject.innerText = temp.data
 
       app.content.appendChild(MessageObject)
+      app.content.scrollTop = app.content.scrollHeight
+    } else if (temp.username === username) {
+      save(temp)
+      const MessageObject = document.createElement('p')
+      MessageObject.id = 'Chat-Message-User'
+      MessageObject.innerText = temp.username + ':   ' + temp.data
+
+      app.content.appendChild(MessageObject)
+      app.content.scrollTop = app.content.scrollHeight
     } else {
       save(temp)
       const MessageObject = document.createElement('p')
@@ -121,6 +131,7 @@ function gotNewMessage (Message, app) {
       MessageObject.innerText = temp.username + ':   ' + temp.data
 
       app.content.appendChild(MessageObject)
+      app.content.scrollTop = app.content.scrollHeight
     }
   }
 }
