@@ -17,8 +17,8 @@ export function login (WebPage) {
   const LoginPage = document.createElement('main')
   LoginPage.id = 'LoginPage'
 
-  LoginPage.style.width = (window.screen.availWidth.toString() - 30) + 'px'
-  LoginPage.style.height = (window.screen.availHeight - 200).toString() + 'px'
+  // LoginPage.style.width = (window.screen.availWidth.toString() - 30) + 'px'
+  // LoginPage.style.height = (window.screen.availHeight - 200).toString() + 'px'
 
   LoginPage.appendChild(UserInterface.headline('Welcome'))
   LoginPage.appendChild(UserInterface.headline('Please Log in:'))

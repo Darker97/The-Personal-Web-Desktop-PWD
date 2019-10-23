@@ -18,6 +18,11 @@ main{
     left: auto;
     align-self: center;
 }
+#LoginPage{
+    height: 1080px;
+
+}
+
 main input{
     border-radius: 8px;
     border-block-color: rgba(70, 70, 70, 0.692);
@@ -125,4 +130,24 @@ menuleiste button{
     width: 540px;
     height: 20px;
     border-radius: 8px;
+}
+
+#MemmoryGame{
+    display: inline-block;
+    width: 560px;
+    height: 320px;
+    background-image: url('../js/App/img/Memmorybackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#MemmoryGame card{
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 4px;
 }
