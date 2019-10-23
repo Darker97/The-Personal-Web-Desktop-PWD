@@ -29,3 +29,7 @@ Make sure node.js and npm is installed on your system.
 ### Applications
 
 - `Chat` -> Seassional Safe Spot for the Messages displayed on the Chat Application.
+
+## Extra
+
+Icons by Icons8
