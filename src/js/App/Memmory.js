@@ -142,9 +142,14 @@ function turnCard (NextCard, tempWorkingObject, app) {
   if (NextCard.tempCard.disabled === true) {
     return
   }
+  if (firstCard === undefined) {
+    firstCard = ''
+    return
+  }
 
   NextCard.tempCard.style.backgroundImage = 'url(' + NextCard.img + ')'
   NextCard.tempCard.disabled = true
+
   if (firstCard === '') {
     firstCard = NextCard
   } else {
@@ -159,7 +164,7 @@ function turnCard (NextCard, tempWorkingObject, app) {
         firstCard.tempCard.disabled = false
         NextCard.tempCard.disabled = false
         firstCard = ''
-      }, 500)
+      }, 200)
     }
   }
 
