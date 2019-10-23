@@ -131,3 +131,23 @@ menuleiste button{
     height: 20px;
     border-radius: 8px;
 }
+
+#MemmoryGame{
+    display: inline-block;
+    width: 560px;
+    height: 320px;
+    background-image: url('../js/App/img/Memmorybackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#MemmoryGame card{
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 4px;
+}
