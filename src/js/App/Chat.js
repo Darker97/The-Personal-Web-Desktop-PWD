@@ -7,6 +7,9 @@ import * as dataSave from '../Extra/dataSave.js'
  */
 export function setup (app) {
   app.webSocket = new WebSocket('ws://vhost3.lnu.se:20080/socket/')
+
+  username = dataSave.sassionLoad('Username')
+
   app.webSocket.onmessage = function (event) {
     console.log(event.data)
     gotNewMessage(event.data, app)
@@ -57,6 +60,13 @@ function UI (app) {
     input.value = ''
   })
   temp.appendChild(input)
+
+  // input the last values from the Previous chat
+  const OldChatMessages = load()
+  OldChatMessages.forEach(element => {
+    gotNewMessage(element, app)
+  })
+
   return temp
 }
 
@@ -80,7 +90,7 @@ export function focus (element) {
  * const for the Application
  */
 const key = 'eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd'
-const username = 'Darker97'
+let username = ''
 
 /**
  * sends a given Message to the Websocket
@@ -139,8 +149,30 @@ function gotNewMessage (Message, app) {
 /* ------------------------------- */
 // Save ID is "Chat"
 
+/**
+ * gets a Message in the form of a String and saves it in the seassionStorrage
+ * @param {String} params
+ */
 function save (params) {
+  const temp = JSON.stringify(params)
+  if (dataSave.sassionLoad('Chat') !== null) {
+    dataSave.seassionSafe('Chat', dataSave.sassionLoad('Chat') + '_-_-_' + temp)
+  } else {
+    dataSave.seassionSafe('Chat', temp)
+  }
+  // If the save space gets to big, we simply reset it.
+  if (load().length > 50) {
+    dataSave.seassionSafe('Chat', null)
+  }
 }
 
-function load (params) {
+/**
+ * Loads the safed data from the seassionStorrage
+ */
+function load () {
+  let arr = []
+  if (dataSave.sassionLoad('Chat') !== null) {
+    arr = dataSave.sassionLoad('Chat').split('_-_-_')
+  }
+  return arr
 }

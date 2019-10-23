@@ -5,6 +5,35 @@ body {
     background-blend-mode: lighten;
 }
 
+main{
+    background-color: aliceblue;
+    background-image: url('../image/Backround-login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-color: black;
+    border-style: solid;
+    border-radius: 8px;
+    text-align: center;
+    left: auto;
+    align-self: center;
+}
+#LoginPage{
+    height: 1080px;
+
+}
+
+main input{
+    border-radius: 8px;
+    border-block-color: rgba(70, 70, 70, 0.692);
+    border-style: solid;
+}
+main button{
+    border-radius: 8px;
+    border-block-color: black;
+    border-style: solid;
+}
+
 menuleiste{
     border-style: solid;
     border-color: black;
@@ -101,4 +130,24 @@ menuleiste button{
     width: 540px;
     height: 20px;
     border-radius: 8px;
+}
+
+#MemmoryGame{
+    display: inline-block;
+    width: 560px;
+    height: 320px;
+    background-image: url('../js/App/img/Memmorybackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#MemmoryGame card{
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 4px;
 }
