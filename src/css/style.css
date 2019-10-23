@@ -18,6 +18,11 @@ main{
     left: auto;
     align-self: center;
 }
+#LoginPage{
+    height: 1080px;
+
+}
+
 main input{
     border-radius: 8px;
     border-block-color: rgba(70, 70, 70, 0.692);
