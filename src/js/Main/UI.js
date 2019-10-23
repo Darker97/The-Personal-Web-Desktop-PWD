@@ -1,4 +1,7 @@
 import * as MainSystem from '../Main/MainSystem.js'
+import * as UserInterface from '../Extra/userInterface.js'
+import { mainStart } from '../app.js'
+import { seassionSafe } from '../Extra/dataSave.js'
 
 /**
  * Builds the normal Desktop UI and adds it to the Objects
@@ -10,21 +13,35 @@ export function BuildUI (Object, apps) {
 }
 
 /* __________________________ */
-export function login (WebPage, UserInterface) {
-  WebPage.appendChild(UserInterface.headline('Welcome'))
-  WebPage.appendChild(UserInterface.headline('Please Lock in'))
+export function login (WebPage) {
+  const LoginPage = document.createElement('main')
+  LoginPage.id = 'LoginPage'
+
+  // LoginPage.style.width = (window.screen.availWidth.toString() - 30) + 'px'
+  // LoginPage.style.height = (window.screen.availHeight - 200).toString() + 'px'
+
+  LoginPage.appendChild(UserInterface.headline('Welcome'))
+  LoginPage.appendChild(UserInterface.headline('Please Log in:'))
 
   const login = UserInterface.input('User')
-  const password = UserInterface.password('password')
-  WebPage.appendChild(login)
-  WebPage.appendChild(password)
+  LoginPage.appendChild(login)
 
-  const button = UserInterface.button('Send')
+  const button = UserInterface.button('Login')
 
-  WebPage.appendChild('button')
+  LoginPage.appendChild(button)
+
+  document.body.appendChild(LoginPage)
+
+  login.addEventListener('change', function () {
+    seassionSafe('Username', login.value)
+    document.body.innerHTML = ''
+    mainStart()
+  })
 
   button.addEventListener('click', function () {
-    // TODO: Add Function
+    seassionSafe('Username', login.value)
+    document.body.innerHTML = ''
+    mainStart()
   })
 }
 /* __________________________ */
