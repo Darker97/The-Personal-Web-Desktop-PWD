@@ -59,8 +59,17 @@ export function focus (element) {
  */
 function newGame (temp, app) {
   const arr = createCards()
-  app.UsersPoints = 0
+
+  const arrayKey = ['a', 's', 'd', 'f', 'g', 'h', 'y', 'x', 'c', 'v', 'b', 'n']
+  let i = 0
   arr.forEach(element => {
+    element.key = arrayKey[i]
+    i++
+  })
+
+  app.UsersPoints = 0
+  app.CardArray = arr
+  app.CardArray.forEach(element => {
     const tempCard = document.createElement('card')
     tempCard.style.backgroundImage = "url('../js/App/img/MemmoryCards/standart.png')"
     temp.appendChild(tempCard)
@@ -68,6 +77,8 @@ function newGame (temp, app) {
 
     tempCard.addEventListener('click', function () { element.TurnFunction(element, temp, app) })
   })
+
+  addKeyboard(app, temp)
 }
 
 /**
@@ -99,6 +110,7 @@ function createCards () {
   array.push(Object.create(card6))
 
   MaxPoints = array.length
+  // Number of keyboard keys
 
   return shuffle(array)
 }
@@ -159,4 +171,14 @@ function turnCard (NextCard, tempWorkingObject, app) {
       newGame(tempWorkingObject, app)
     }, 5000)
   }
+}
+
+function addKeyboard (app, temp) {
+  window.addEventListener('keydown', function (event) {
+    app.CardArray.forEach(element => {
+      if (element.key === event.key) {
+        element.TurnFunction(element, temp, app)
+      }
+    })
+  })
 }
