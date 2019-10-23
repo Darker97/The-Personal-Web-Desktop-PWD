@@ -162,7 +162,7 @@ function save (params) {
   }
   // If the save space gets to big, we simply reset it.
   if (load().length > 50) {
-    dataSave.seassionSafe('Chat', '')
+    dataSave.seassionSafe('Chat', null)
   }
 }
 
