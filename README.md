@@ -21,6 +21,10 @@ Make sure node.js and npm is installed on your system.
 - Memmory Game
   - A little Memmory game. Can be controlled either by mouse or by using the keyboard ( keys a-h and y-b)
 
+## important Keywords 
+
+- `KeyCheck`-> used to aktivate and deaktivate keyloggers
+
 ## important Keywords for the Save function
 
 ### General SeassionSafe
