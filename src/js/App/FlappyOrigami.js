@@ -1,4 +1,4 @@
-import * as game from "./FlappyOrigami src/Game.js";
+import * as game from './FlappyOrigami src/Game.js'
 
 /**
  * Everything that your App needs to do first
@@ -34,7 +34,7 @@ export function kill (app) {
 function UI (app) {
   const temp = document.createElement('div')
   temp.id = 'FlappyOrigami'
-  game.UI(temp)
+  game.UI(temp, app)
   return temp
 }
 
@@ -51,16 +51,3 @@ export function minimising () {
 export function focus (element, app) {
   app.KeyCheck = true
 }
-
-function addKeyboard (app, temp) {
-  window.addEventListener('keydown', function (event) {
-    if (app.KeyCheck === true) {
-      app.CardArray.forEach(element => {
-        if (element.key === event.key) {
-          element.TurnFunction(element, temp, app)
-        }
-      })
-    }
-  })
-}
-
