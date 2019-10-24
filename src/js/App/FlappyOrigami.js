@@ -6,7 +6,7 @@ import * as game from './FlappyOrigami src/Game.js'
  */
 export function setup (app) {
   // YOUR CODE HERE
-  return UI()
+  return UI(app)
 }
 
 /**

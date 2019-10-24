@@ -19,6 +19,10 @@ export function UI (element, app) {
 
   ButtonPressed(app)
 
+  Objectbird.img.src = 'img/Bird.png'
+  ObjectPipe.imgBottom.src = 'img/Pipe_bottom.png'
+  ObjectPipe.imgTop.src = 'img/Pipe_top.png'
+
   PipeArray[0].x = drawingPlace.width
   PipeArray[0].y = 0
 
@@ -45,6 +49,8 @@ function draw (drawingPlace, app) {
 
     if (element.x === 280) {
       PipeArray.push(new Pipe(drawingPlace.width, Math.floor(Math.random() * element.height) - element.height))
+      PipeArray[PipeArray.length - 1].imgBottom.src = 'img/Pipe_bottom.png'
+      PipeArray[PipeArray.length - 1].imgTop.src = 'img/Pipe_top.png'
     }
   })
   drawingPlace.drawImage(Objectbird.img, Objectbird.x, Objectbird.y)

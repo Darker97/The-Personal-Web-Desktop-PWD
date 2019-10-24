@@ -5,15 +5,7 @@ export class Pipe {
 
     this.abstand = 20
 
-    this.imgTop = () => {
-      var image = new Image()
-      image.src = 'img/Pipe_top.png'
-      return image
-    }
-    this.imgBottom = () => {
-      var image = new Image()
-      image.src = 'img/Pipe_bottom.png'
-      return image
-    }
+    this.imgTop = new Image()
+    this.imgBottom = new Image()
   }
 }
