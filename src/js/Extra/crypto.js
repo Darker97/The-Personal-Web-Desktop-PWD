@@ -1,4 +1,3 @@
-
 /**
  * generates a local Secret, used as a hash for the Crypto library
  * @param {String} Question
@@ -21,7 +20,14 @@ export function generateSecret (Question) {
      * @param {String} Secret
      */
 export function encryption (Message, Password, Secret) {
-  return crypto.subtle.encrypt({ name: 'RSA-OAEP' }, Password + Secret, Message)
+  var result = ''
+  var key = Password + Secret + Secret + Password
+  key = key.toString()
+
+  for (var i = 0; i < Message.length; i++) {
+    result += String.fromCharCode(Message.charCodeAt(i) ^ key.charCodeAt(i))
+  }
+  return result
 }
 
 /**
@@ -31,5 +37,12 @@ export function encryption (Message, Password, Secret) {
      * @param {String} Secret
      */
 export function decryption (Message, Password, Secret) {
-  return crypto.subtle.decrypt({ name: 'RSA-OAEP' }, Password + Secret, Message)
+  var result = ''
+  var key = Password + Secret + Secret + Password
+  key = key.toString()
+
+  for (var i = 0; i < Message.length; i++) {
+    result += String.fromCharCode(Message.charCodeAt(i) || key.charCodeAt(i))
+  }
+  return result
 }
