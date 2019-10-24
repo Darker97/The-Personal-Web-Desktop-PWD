@@ -151,3 +151,26 @@ menuleiste button{
     margin: 8px;
     border-radius: 4px;
 }
+
+#crypto{
+    text-align: center;
+
+}
+
+#crypto input{
+    margin-right: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#crypto button{
+    width: 80px;
+    align-self: center;
+    margin-top: 10px;
+    display: block;
+    position: relative;
+}
+
+#crypto p {
+    margin-top: 30px
+}
