@@ -3,9 +3,7 @@ import { Field } from './Gamefield.js'
 import { Pipe } from './Pipe.js'
 
 /* ------------------------------------- */
-const Objectbird = new Bird()
 const Objectfield = new Field()
-const ObjectPipe = new Pipe()
 const PipeArray = [new Pipe()]
 /* ------------------------------------- */
 export function UI (element, app) {
@@ -14,25 +12,29 @@ export function UI (element, app) {
   field.style.height = Objectfield.height
   field.style.width = Objectfield.width
 
+  // Start drawing
   const drawingPlace = field.getContext('2d')
-  drawingPlace.drawImage(Objectbird.img, Objectbird.startheight, Objectbird.startWidth, Objectbird.width, Objectbird.height)
+  drawingPlace.fillStyle = 'lightblue'
+  drawingPlace.fillRect(0, 0, 300, 550)
 
   ButtonPressed(app)
 
-  Objectbird.img.src = 'img/Bird.png'
-  ObjectPipe.imgBottom.src = 'img/Pipe_bottom.png'
-  ObjectPipe.imgTop.src = 'img/Pipe_top.png'
-
   PipeArray[0].x = drawingPlace.width
-  PipeArray[0].y = 0
 
   app.score = 0
+
+  app.bird = new Bird()
+
+  const img = document.createElement('image')
+  img.src = '/img/Bird.png'
+  app.bird.img.src = img
+
+  app.continue = true
   draw(drawingPlace, app)
 }
 
 function draw (drawingPlace, app) {
   // what is happening?
-  Objectbird.x += Objectfield.gravity
 
   PipeArray.forEach(element => {
     element.x--
@@ -42,40 +44,47 @@ function draw (drawingPlace, app) {
     }
   })
 
+  // mal den Bird
+  drawingPlace.fillRect(app.bird.x, app.bird.y, 10, 5)
+
   // draw the Objects
   PipeArray.forEach(element => {
-    drawingPlace.drawImage(element.imgTop, element.x, element.y)
-    drawingPlace.drawImage(element.imgBottom, element.x, element.y + element.abstand)
+    drawingPlace.fillStyle = 'black'
+    // Untere Object
+    drawingPlace.fillRect(element.x, element.y, element.breite, element.höhe)
+    // obeere Object
+    drawingPlace.fillRect(element.x, element.y - element.abstand, element.breite, -element.höhe)
 
+    // Start new pipe
     if (element.x === 280) {
-      PipeArray.push(new Pipe(drawingPlace.width, Math.floor(Math.random() * element.height) - element.height))
-      PipeArray[PipeArray.length - 1].imgBottom.src = 'img/Pipe_bottom.png'
-      PipeArray[PipeArray.length - 1].imgTop.src = 'img/Pipe_top.png'
+      PipeArray.push(new Pipe(drawingPlace.width, Math.floor(Math.random() * element.height)))
     }
   })
-  drawingPlace.drawImage(Objectbird.img, Objectbird.x, Objectbird.y)
 
-  // Scoreboard
-  drawingPlace.fillStyle = '#000'
-  drawingPlace.fillText(app.score, 10, drawingPlace.height - 20)
-
+  if (app.bird.isDead()) {
+    app.continue = false
+    GameOver()
+  }
   // Collision
   PipeArray.forEach(element => {
-    if (Objectbird.x + Objectbird.width >= element.x && Objectbird.x <= element.x + element.width && (Objectbird.y <= element.y + element.height || Objectbird.y + Objectbird.height >= element.y + element.abstand)) {
-      GameOver(app)
+    if (app.bird.colision(element)) {
+      app.continue = false
+      GameOver()
     }
   })
 
   // Draw again
-  requestAnimationFrame(draw)
+  if (app.continue === true) {
+    const b = function () {
+    requestAnimationFrame(draw(drawingPlace, app))
+    }
+  }
 }
 
 function ButtonPressed (app) {
   window.addEventListener('keydown', function (event) {
     if (app.KeyCheck === true) {
-      if (event.code === 'Space') {
-        Objectbird.x += 20
-      }
+      app.bird.PlayerPush()
     }
   })
 }
