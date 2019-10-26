@@ -1,7 +1,7 @@
 export class Field {
   constructor () {
-    this.height = '150px'
-    this.width = '320px'
+    this.height = '300px'
+    this.width = '550px'
 
     this.gravity = -1.5
   }
