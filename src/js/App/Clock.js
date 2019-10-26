@@ -77,6 +77,10 @@ export function focus (element) {
   // YOUR CODE HERE
 }
 
+/**
+ * Updates the Timer for the new Time
+ * @param {Application} app 
+ */
 function UpdateTimer (app) {
   if (app.secondCounter / (60 * 60) >= 1) {
     app.timer.innerText = (((app.secondCounter / 3600) >> 0) + ':' + (app.secondCounter / 60) >> 0 + ':' + (app.secondCounter % 60)).toString() + ' Hours'
