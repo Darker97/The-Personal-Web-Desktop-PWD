@@ -11,7 +11,7 @@ export function loopControll () {
   loop.forEach(function (app) {
     app.loopFunction(app)
   })
-  setTimeout(loopControll, 5000)
+  setTimeout(loopControll, 1000)
 }
 
 /** adds an application to the loop
