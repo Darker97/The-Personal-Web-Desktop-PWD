@@ -46,10 +46,11 @@ function UI (app) {
 
   const buttonencrypt = swing.button('encrypt')
   const buttondecrypt = swing.button('decrypt')
-  const output = swing.label('your final text')
+  const output = document.createElement('textarea')
+  output.value = 'Your final Text:'
 
   temp.appendChild(input)
-  temp.appendChild(inputpass)
+  // temp.appendChild(inputpass)
   temp.appendChild(buttondecrypt)
   temp.appendChild(buttonencrypt)
   temp.appendChild(document.createElement('br'))
@@ -57,11 +58,17 @@ function UI (app) {
 
   app.element = input
 
+  output.rows = 6
+
   buttondecrypt.addEventListener('click', function () {
-    output.textContent = decrypt(input.value, inputpass.value)
+    output.value = decrypt(input.value, inputpass.value, app.secret)
+    document.activeElement.blur()
+    output.focus()
   })
   buttonencrypt.addEventListener('click', function () {
-    output.textContent = encrypt(input.value, inputpass.value)
+    output.value = encrypt(input.value, inputpass.value, app.secret)
+    document.activeElement.blur()
+    output.focus()
   })
   return temp
 }
