@@ -110,14 +110,20 @@ function dragElement (element, Application) {
 }
 
 let lastElement
+let lastApplication
 function setNewFocus (element, Application) {
   if (lastElement !== undefined) {
     // give the clicked element focus and put it to the front
     lastElement.style.zIndex = 0
-    lastElement.blur()
-    Application.focus(element)
+    document.activeElement.blur()
+    Application.focus(element, Application)
+
+    if (lastApplication.KeyCheck !== undefined) {
+      lastApplication.KeyCheck = false
+    }
 
     element.style.zIndex = 1000
   }
   lastElement = element
+  lastApplication = Application
 }

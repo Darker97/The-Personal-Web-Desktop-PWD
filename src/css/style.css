@@ -151,3 +151,62 @@ menuleiste button{
     margin: 8px;
     border-radius: 4px;
 }
+
+#crypto{
+    text-align: center;
+
+}
+
+#crypto input{
+    margin-right: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#crypto button{
+    width: 80px;
+    align-self: center;
+    margin-top: 10px;
+    display: block;
+    position: relative;
+}
+
+#crypto p {
+    margin-top: 30px
+}
+
+#ClockApp {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../js/App/img/Clock-Background.jpg');
+    height: 350px;
+}
+
+#ClockApp #Clock{
+    font-size: 38px;
+    letter-spacing: 0.109em;
+    font-weight: 600;
+    background-color: rgb(255, 246, 246);
+    border-style: solid;
+    border-color: black;
+    width: 400px;
+    height: 50px;
+    line-height: 62px;
+    margin-left: 15%;
+    margin-right: 50%;
+}
+
+#ClockApp #startStopButton{
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    font-variation-settings: "opsz" 20, "GRAD" 400, "YAXS" 400;
+    letter-spacing: 0.013em;
+    line-height: 27px;
+    font-weight: 590.7999877929688;
+    cursor: pointer; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 50%;
+    margin-left: 45%;
+}
