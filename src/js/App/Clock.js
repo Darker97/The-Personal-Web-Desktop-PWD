@@ -1,4 +1,4 @@
-import { label, button } from '../Extra/userInterface.js'
+import { label } from '../Extra/userInterface.js'
 
 /**
  * Everything that your App needs to do first
@@ -79,7 +79,7 @@ export function focus (element) {
 
 /**
  * Updates the Timer for the new Time
- * @param {Application} app 
+ * @param {Application} app
  */
 function UpdateTimer (app) {
   if (app.secondCounter / (60 * 60) >= 1) {
