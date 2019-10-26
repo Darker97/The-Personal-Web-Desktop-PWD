@@ -20,13 +20,15 @@ export function generateSecret (Question) {
      * @param {String} Secret
      */
 export function encryption (Message, Password, Secret) {
-  var result = ''
-  var key = Password + Secret + Secret + Password
-  key = key.toString()
+  var result = window.btoa(Message)
+  // var result = ''
+  // var key = Password + Secret + Secret + Password
+  // key = window.btoa(Message)
 
-  for (var i = 0; i < Message.length; i++) {
-    result += String.fromCharCode(Message.charCodeAt(i) ^ key.charCodeAt(i))
-  }
+  // for (var i = 0; i < Message.length; i++) {
+  //   result += String.fromCharCode(Message.charCodeAt(i) ^ key.charCodeAt(i))
+  // }
+
   return result
 }
 
@@ -38,11 +40,12 @@ export function encryption (Message, Password, Secret) {
      */
 export function decryption (Message, Password, Secret) {
   var result = ''
-  var key = Password + Secret + Secret + Password
-  key = key.toString()
+  // var key = Password + Secret + Secret + Password
+  // key = window.btoa(Message)
 
-  for (var i = 0; i < Message.length; i++) {
-    result += String.fromCharCode(Message.charCodeAt(i) || key.charCodeAt(i))
-  }
+  // for (var i = 0; i < Message.length; i++) {
+  //   result += String.fromCharCode(Message.charCodeAt(i) || key.charCodeAt(i))
+  // }
+  result = window.atob(Message)
   return result
 }
