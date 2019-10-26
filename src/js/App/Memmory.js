@@ -24,6 +24,7 @@ export function loop (Application) {
  */
 export function kill (app) {
   console.log(app.name + ' kill')
+  app.KeyCheck = false
   const temp = app.workinkObject.parentElement
   temp.parentElement.removeChild(temp)
 }
@@ -49,8 +50,9 @@ export function minimising () {
 /**
  * If the App gets in Focus, this function should focus the right things
  *  */
-export function focus (element) {
+export function focus (element, app) {
   // YOUR CODE HERE
+  app.KeyCheck = true
 }
 
 /**
@@ -77,7 +79,7 @@ function newGame (temp, app) {
 
     tempCard.addEventListener('click', function () { element.TurnFunction(element, temp, app) })
   })
-
+  app.KeyCheck = true
   addKeyboard(app, temp)
 }
 
@@ -180,10 +182,12 @@ function turnCard (NextCard, tempWorkingObject, app) {
 
 function addKeyboard (app, temp) {
   window.addEventListener('keydown', function (event) {
-    app.CardArray.forEach(element => {
-      if (element.key === event.key) {
-        element.TurnFunction(element, temp, app)
-      }
-    })
+    if (app.KeyCheck === true) {
+      app.CardArray.forEach(element => {
+        if (element.key === event.key) {
+          element.TurnFunction(element, temp, app)
+        }
+      })
+    }
   })
 }
