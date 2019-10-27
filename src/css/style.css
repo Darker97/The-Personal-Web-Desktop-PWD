@@ -152,6 +152,15 @@ menuleiste button{
     border-radius: 4px;
 }
 
+#MemmoryGame > p {
+    width: 75px;
+    margin-left: 45%;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 8px;
+   }   
+
 #crypto{
     text-align: center;
     width: 560px;

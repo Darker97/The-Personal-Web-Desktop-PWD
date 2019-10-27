@@ -1,10 +1,12 @@
-import { headline } from '../Extra/userInterface.js'
+import { headline, label } from '../Extra/userInterface.js'
+import { save, sassionLoad } from '../Extra/dataSave.js'
 /**
  * Everything that your App needs to do first
  * Load save states, create the UI etc.
  */
 export function setup (app) {
   // YOUR CODE HERE
+  app.counterValue = 0
   return UI(app)
 }
 
@@ -14,8 +16,11 @@ let MaxPoints = 0
  * used for all functions that have to be checked regulary
  * @param {Application} Application
  */
-export function loop (Application) {
-  // YOUR CODE HERE
+export function loop (app) {
+  // YOUR CODE HERE#
+  if (app.counterValue !== undefined) {
+    app.counter.innerText = app.counterValue + ' Move(s)'
+  }
 }
 
 /**
@@ -36,7 +41,9 @@ function UI (app) {
   const temp = document.createElement('div')
   temp.id = 'MemmoryGame'
   newGame(temp, app)
-
+  const counter = label('X Move(s)')
+  app.counter = counter
+  temp.appendChild(counter)
   return temp
 }
 
@@ -141,6 +148,7 @@ let firstCard = ''
  * checks if the game is over and starts a new one
  */
 function turnCard (NextCard, tempWorkingObject, app) {
+  app.counterValue++
   if (NextCard.tempCard.disabled === true) {
     return
   }
@@ -175,6 +183,8 @@ function turnCard (NextCard, tempWorkingObject, app) {
     tempWorkingObject.appendChild(headline('YOU DID IT 🥳'))
     setTimeout(function (params) {
       tempWorkingObject.innerHTML = ''
+      save('HighscoreMemory', app.counterValue + sassionLoad('Username'))
+      app.counter = 0
       newGame(tempWorkingObject, app)
     }, 5000)
   }
