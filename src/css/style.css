@@ -248,3 +248,22 @@ menuleiste button{
     margin-right: 50%;
     margin-left: 45%;
 }
+
+#Infopage ol {
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+#Infopage > p {
+    line-height: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
+}
+#Infopage > p:nth-child(4) {
+    font-style: italic;
+    letter-spacing: 0.031em;
+    line-height: 5px;
+    font-size: 20px;
+}
+  
