@@ -154,22 +154,51 @@ menuleiste button{
 
 #crypto{
     text-align: center;
-
+    width: 560px;
+    height: 320px;
+    background-image: url('../js/App/img/CryptoBackround.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #crypto input{
     margin-right: 30px;
     border-radius: 5px;
     margin-top: 10px;
+    height: 30px;
+    width: 200px;
+       
 }
 
+#crypto textarea {
+    margin-right: 0%;
+    height: 150px;
+    width: 500px;
+    margin-left: 1%;
+}
+   
 #crypto button{
     width: 80px;
+    left: 20px;
+    margin-top: 15px;
+
     align-self: center;
-    margin-top: 10px;
     display: block;
     position: relative;
+    border-radius: 8px;
+
+    background-color: lightgrey;
 }
+
+#crypto > button:nth-child(3) {
+    left: 25px;
+    margin-top: 15px;
+}
+
+#crypto button :focus {
+    background-color: darkgrey;
+}
+   
 
 #crypto p {
     margin-top: 30px
