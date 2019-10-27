@@ -39,9 +39,9 @@ export function deleteFromLoop (Application) {
  * returns a String with the name of all Apps that are currently inside the loop.
  */
 export function PrintRunningApps () {
-  let i = ''
+  const i = []
   loop.forEach(function (app) {
-    i = i + '-' + app.name
+    i.push(app.name + ' - ' + app.Info)
   })
   return i
 }
