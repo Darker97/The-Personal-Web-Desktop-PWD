@@ -21,7 +21,7 @@ Make sure node.js and npm is installed on your system.
 - Memmory Game
   - A little Memmory game. Can be controlled either by mouse or by using the keyboard ( keys a-h and y-b)
 
-## important Keywords 
+## important Keywords
 
 - `KeyCheck`-> used to aktivate and deaktivate keyloggers
 
@@ -35,6 +35,7 @@ Make sure node.js and npm is installed on your system.
 ### Applications
 
 - `Chat` -> Seassional Safe Spot for the Messages displayed on the Chat Application.
+- `HighscoreMemory`-> Safe Spot for the Highscore
 
 ## Extra
 
