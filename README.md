@@ -39,5 +39,5 @@ Make sure node.js and npm is installed on your system.
 
 ## Extra
 
-Icons by Icons8
-Clock Picture by [Moose]("https://photos.icons8.com/photos/lets-have-some-fresh-coffee--5b43c1548b6588000165bd30")
+- Icons by Icons8
+- Clock Picture by [Moose]("https://photos.icons8.com/photos/lets-have-some-fresh-coffee--5b43c1548b6588000165bd30")
