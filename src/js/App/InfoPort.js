@@ -37,6 +37,7 @@ export function kill (app) {
 function UI (app) {
   const temp = document.createElement('div')
   temp.id = 'Infopage'
+  temp.appendChild(document.createElement('br'))
   const allApplications = document.createElement('ol')
   activ(app, allApplications)
   temp.appendChild(allApplications)

@@ -249,6 +249,13 @@ menuleiste button{
     margin-left: 45%;
 }
 
+#Infopage{
+    background-image: url(../js/App/img/InfoPortBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 320px;
+}
+
 #Infopage ol {
     background-color: white;
     border-radius: 8px;
@@ -259,11 +266,14 @@ menuleiste button{
     font-size: 22px;
     font-weight: 700;
     font-style: normal;
+    background-color: white;
+    border-radius: 8px;
+    height: 25px;
+
 }
 #Infopage > p:nth-child(4) {
     font-style: italic;
     letter-spacing: 0.031em;
-    line-height: 5px;
     font-size: 20px;
 }
   
