@@ -64,6 +64,7 @@ function AppStandartUI (Name, PositionX, PositionY, Application) {
 /**
  * ads a function to the element so we can toss it arround
  * @param {HTMLElement} element
+ * @source Stackoverflow
  */
 function dragElement (element, Application) {
   // TODO: ---
@@ -84,7 +85,7 @@ function dragElement (element, Application) {
     setNewFocus(element, Application)
 
     document.onmouseup = closeDragElement
-    // call a function whenever the cursor moves:
+    // call this function whenever the cursor moves:
     document.onmousemove = elementDrag
   }
 
