@@ -248,3 +248,32 @@ menuleiste button{
     margin-right: 50%;
     margin-left: 45%;
 }
+
+#Infopage{
+    background-image: url(../js/App/img/InfoPortBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 320px;
+}
+
+#Infopage ol {
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+#Infopage > p {
+    line-height: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
+    background-color: white;
+    border-radius: 8px;
+    height: 25px;
+
+}
+#Infopage > p:nth-child(4) {
+    font-style: italic;
+    letter-spacing: 0.031em;
+    font-size: 20px;
+}
+  
