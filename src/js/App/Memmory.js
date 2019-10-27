@@ -1,4 +1,4 @@
-import { headline } from '../Extra/userInterface.js'
+import { headline, label } from '../Extra/userInterface.js'
 /**
  * Everything that your App needs to do first
  * Load save states, create the UI etc.
@@ -14,8 +14,9 @@ let MaxPoints = 0
  * used for all functions that have to be checked regulary
  * @param {Application} Application
  */
-export function loop (Application) {
+export function loop (app) {
   // YOUR CODE HERE
+  app.counter.innerText = app.UsersPoints + ' Move(s)'
 }
 
 /**
@@ -36,7 +37,9 @@ function UI (app) {
   const temp = document.createElement('div')
   temp.id = 'MemmoryGame'
   newGame(temp, app)
-
+  const counter = label('X Move(s)')
+  app.counter = counter
+  temp.appendChild(counter)
   return temp
 }
 
