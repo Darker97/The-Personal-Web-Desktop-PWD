@@ -152,24 +152,62 @@ menuleiste button{
     border-radius: 4px;
 }
 
+#MemmoryGame > p {
+    width: 75px;
+    margin-left: 45%;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 8px;
+   }   
+
 #crypto{
     text-align: center;
-
+    width: 560px;
+    height: 320px;
+    background-image: url('../js/App/img/CryptoBackround.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #crypto input{
     margin-right: 30px;
     border-radius: 5px;
     margin-top: 10px;
+    height: 30px;
+    width: 200px;
+       
 }
 
+#crypto textarea {
+    margin-right: 0%;
+    height: 150px;
+    width: 500px;
+    margin-left: 1%;
+}
+   
 #crypto button{
     width: 80px;
+    left: 20px;
+    margin-top: 15px;
+
     align-self: center;
-    margin-top: 10px;
     display: block;
     position: relative;
+    border-radius: 8px;
+
+    background-color: lightgrey;
 }
+
+#crypto > button:nth-child(3) {
+    left: 25px;
+    margin-top: 15px;
+}
+
+#crypto button :focus {
+    background-color: darkgrey;
+}
+   
 
 #crypto p {
     margin-top: 30px
@@ -210,3 +248,32 @@ menuleiste button{
     margin-right: 50%;
     margin-left: 45%;
 }
+
+#Infopage{
+    background-image: url(../js/App/img/InfoPortBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 320px;
+}
+
+#Infopage ol {
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+#Infopage > p {
+    line-height: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
+    background-color: white;
+    border-radius: 8px;
+    height: 25px;
+
+}
+#Infopage > p:nth-child(4) {
+    font-style: italic;
+    letter-spacing: 0.031em;
+    font-size: 20px;
+}
+  
