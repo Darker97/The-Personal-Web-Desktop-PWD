@@ -183,8 +183,8 @@ function turnCard (NextCard, tempWorkingObject, app) {
     tempWorkingObject.appendChild(headline('YOU DID IT 🥳'))
     setTimeout(function (params) {
       tempWorkingObject.innerHTML = ''
-      save('HighscoreMemory', app.counterValue + sassionLoad('Username'))
-      app.counter = 0
+      save('HighscoreMemory', app.counterValue + ' - ' + sassionLoad('Username'))
+      app.counterValue = 0
       newGame(tempWorkingObject, app)
     }, 5000)
   }
