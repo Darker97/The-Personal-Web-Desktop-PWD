@@ -43,7 +43,7 @@ export function minimising () {
 
 /**
  * If the App gets in Focus, this function should focus the right things
- *  */
+ */
 export function focus (element) {
   // YOUR CODE HERE
 }
