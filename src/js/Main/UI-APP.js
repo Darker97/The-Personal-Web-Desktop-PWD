@@ -67,7 +67,6 @@ function AppStandartUI (Name, PositionX, PositionY, Application) {
  * @source Stackoverflow
  */
 function dragElement (element, Application) {
-  // TODO: ---
   var pos1
   var pos2
   var pos3
