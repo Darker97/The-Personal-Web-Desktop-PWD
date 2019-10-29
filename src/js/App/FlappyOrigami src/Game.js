@@ -75,9 +75,7 @@ function draw (drawingPlace, app) {
 
   // Draw again
   if (app.continue === true) {
-    const b = function () {
     requestAnimationFrame(draw(drawingPlace, app))
-    }
   }
 }
 

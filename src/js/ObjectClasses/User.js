@@ -1,4 +1,4 @@
-class User {
+export class User {
 /**
  * Constructor for the User Objects
  * @param {String} name
