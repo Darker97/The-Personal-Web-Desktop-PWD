@@ -7,6 +7,7 @@ import { save, sassionLoad } from '../Extra/dataSave.js'
 export function setup (app) {
   // YOUR CODE HERE
   app.counterValue = 0
+  app.firstCard = ''
   return UI(app)
 }
 
@@ -142,7 +143,6 @@ function shuffle (array) {
   return array
 }
 
-let firstCard = ''
 /**
  * turns the cards
  * checks if the game is over and starts a new one
@@ -152,28 +152,28 @@ function turnCard (NextCard, tempWorkingObject, app) {
   if (NextCard.tempCard.disabled === true) {
     return
   }
-  if (firstCard === undefined) {
-    firstCard = ''
+  if (app.firstCard === undefined) {
+    app.firstCard = ''
     return
   }
 
   NextCard.tempCard.style.backgroundImage = 'url(' + NextCard.img + ')'
   NextCard.tempCard.disabled = true
 
-  if (firstCard === '') {
-    firstCard = NextCard
+  if (app.firstCard === '') {
+    app.firstCard = NextCard
   } else {
-    if (firstCard.id === NextCard.id) {
-      console.log('match -> ' + firstCard.id)
+    if (app.firstCard.id === NextCard.id) {
+      console.log('match -> ' + app.firstCard.id)
       app.UsersPoints++
-      firstCard = ''
+      app.firstCard = ''
     } else {
       setTimeout(function () {
-        firstCard.tempCard.style.backgroundImage = "url('../js/App/img/MemmoryCards/standart.png')"
+        app.firstCard.tempCard.style.backgroundImage = "url('../js/App/img/MemmoryCards/standart.png')"
         NextCard.tempCard.style.backgroundImage = "url('../js/App/img/MemmoryCards/standart.png')"
-        firstCard.tempCard.disabled = false
+        app.firstCard.tempCard.disabled = false
         NextCard.tempCard.disabled = false
-        firstCard = ''
+        app.firstCard = ''
       }, 200)
     }
   }
