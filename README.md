@@ -1,6 +1,7 @@
 # Examination assignment 3
 
 This is the assignment repo for the second assignment in the course.
+[Demonstration](https://youtu.be/ezUuIo55hF0)
 
 ## Installation
 
