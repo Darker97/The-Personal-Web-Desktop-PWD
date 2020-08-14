@@ -3,6 +3,9 @@
 This is the assignment repo for the second assignment in the course.
 [Demonstration](https://youtu.be/ezUuIo55hF0)
 
+Demo:
+https://darker97.github.io/The-Personal-Web-Desktop-PWD/src/index.html
+
 ## Installation
 
 Make sure node.js and npm is installed on your system.
